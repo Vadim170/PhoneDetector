@@ -47,6 +47,12 @@
             app:summary="@string/use_neberitrubku_description"
             app:title="@string/use_neberitrubku" />
 
+        <SwitchPreferenceCompat
+            app:key="use_saverudata_info"
+            app:defaultValue="true"
+            app:summary="@string/use_saverudata_info_description"
+            app:title="@string/use_saverudata_info" />
+
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/theme_header">

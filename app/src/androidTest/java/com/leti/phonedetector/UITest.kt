@@ -123,6 +123,9 @@ class UITest {
                 hasDescendant(withText(R.string.use_neberitrubku)), click()))
         onView(withId(androidx.preference.R.id.recycler_view))
             .perform(actionOnItem<RecyclerView.ViewHolder>(
+                hasDescendant(withText(R.string.use_saverudata_info)), click()))
+        onView(withId(androidx.preference.R.id.recycler_view))
+            .perform(actionOnItem<RecyclerView.ViewHolder>(
                 hasDescendant(withText(R.string.show_empty_user)), click()))
         onView(withId(androidx.preference.R.id.recycler_view))
             .perform(actionOnItem<RecyclerView.ViewHolder>(

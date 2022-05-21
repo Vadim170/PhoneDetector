@@ -7,6 +7,7 @@ import android.telephony.PhoneNumberUtils
 import androidx.preference.PreferenceManager
 import com.leti.phonedetector.api.GetContact.GetContactAPI
 import com.leti.phonedetector.api.NeberitrubkuAPI
+import com.leti.phonedetector.api.SaverudataAPI
 import com.leti.phonedetector.database.PhoneLogDBHelper
 import com.leti.phonedetector.model.PhoneInfo
 import com.leti.phonedetector.model.PhoneLogInfo
@@ -19,11 +20,20 @@ class Search(private val context: Context) {
     private fun findUserByNetwork(number: String, timeout: Int, time: String, date: String): PhoneLogInfo {
         val use_getcontact = sharedPreferences.getBoolean("use_getcontact", true)
         val use_neberitrubku = sharedPreferences.getBoolean("use_neberitrubku", true)
+        val use_saverudata_info = sharedPreferences.getBoolean("use_saverudata_info", true)
 
         val nebUser = if (use_neberitrubku) NeberitrubkuAPI(number, timeout).getUser() else PhoneInfo(number = number)
         if (!nebUser.isDefault())
             return PhoneLogInfo(
                 nebUser,
+                time = time,
+                date = date
+            )
+
+        val srdUser = if (use_saverudata_info) SaverudataAPI(number, timeout).getUser() else PhoneInfo(number = number)
+        if (!srdUser.isDefault())
+            return PhoneLogInfo(
+                srdUser,
                 time = time,
                 date = date
             )

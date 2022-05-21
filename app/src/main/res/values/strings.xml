@@ -37,6 +37,8 @@
     <string name="use_getcontact">GetContact</string>
     <string name="use_neberitrubku_description">Use neberitrubku.ru for search</string>
     <string name="use_neberitrubku">Neberitrubku.ru</string>
+    <string name="use_saverudata_info_description">Use saverudata.info for search</string>
+    <string name="use_saverudata_info">saverudata.info</string>
     <string name="make_call_on_swipe_text">Access to the call permission is required</string>
     <string name="make_call_on_swipe">Call on left swipe</string>
     <string name="theme_header">Theme</string>

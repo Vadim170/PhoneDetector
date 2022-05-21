@@ -14,7 +14,6 @@ import com.leti.phonedetector.notification.BlockNotification
 import com.leti.phonedetector.notification.IncomingNotification
 import com.leti.phonedetector.overlay.OverlayCreator
 import com.leti.phonedetector.search.Search
-import java.util.*
 
 class PhoneStateReceiver : BroadcastReceiver() {
 
@@ -49,6 +48,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
                             val user = searcher.startPhoneDetection(formattedIncoming)
                             if (!user.toPhoneInfo().isDefault() || showEmptyUser) {
                                 val overlayCreator = OverlayCreator(context)
+                                showNotification(context, user)
 
                                 if (isShowNotificationInsteadOfPopup) {
                                     val mIntent = overlayCreator.createIntent(user.toPhoneInfo(), true)
